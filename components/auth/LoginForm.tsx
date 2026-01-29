@@ -1,56 +1,40 @@
-import { useState } from "react";
+// LoginForm.tsx
+import { useLoginForm } from "@/hooks/useLoginForm";
 import styles from "./Loginform.module.scss";
 
-type FieldErrors = {
-  email?: string;
-  password?: string;
-};
-
 export const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
-  const [errors, setErrors] = useState<FieldErrors>({});
+  const {
+    formData,
+    errors,
+    showPassword,
+    setShowPassword,
+    handleChange,
+    handleSubmit,
+  } = useLoginForm();
 
-  function validate(): boolean {
-    const nextErrors: FieldErrors = {};
-
-    // Email validation
-    if (!email.trim()) {
-      nextErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      nextErrors.email = "Enter a valid email address";
-    }
-
-    // Password validation
-    if (!password) {
-      nextErrors.password = "Password is required";
-    } else if (password.length < 6) {
-      nextErrors.password = "Password must be at least 6 characters";
-    }
-
-    setErrors(nextErrors);
-    return Object.keys(nextErrors).length === 0;
-  }
-
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (!validate()) return;
-
+  const onSubmit = (data: { email: string; password: string }) => {
     // TODO: submit logic
-    console.log({ email, password });
-  }
+    console.log(data);
+  };
+
   return (
     <div>
-      <form className={styles.form} onSubmit={handleSubmit} noValidate>
+      <form
+        className={styles.form}
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit(onSubmit);
+        }}
+        noValidate
+      >
         {/* Email */}
         <div className={styles.field}>
           <input
             className={`${styles.input} ${errors.email ? styles.inputError : ""}`}
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={(e) => handleChange("email", e.target.value)}
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? "email-error" : undefined}
           />
@@ -68,8 +52,8 @@ export const LoginForm = () => {
               className={`${styles.input} ${errors.password ? styles.inputError : ""}`}
               type={showPassword ? "text" : "password"}
               placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={formData.password}
+              onChange={(e) => handleChange("password", e.target.value)}
               aria-invalid={Boolean(errors.password)}
               aria-describedby={errors.password ? "password-error" : undefined}
             />
