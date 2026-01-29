@@ -1,0 +1,44 @@
+:root {
+  --bg: #ffffff;
+  --primary: #39cdcc;
+  --welcome: #213f7d;
+  --subtitle: #545f7d;
+  --border: #e6e9ef;
+  --error: #d92d20;
+}
+
+.container {
+  min-height: 100vh;
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  width: 100%;
+  min-height: 100%;
+  border: 1px solid rgba(33, 63, 125, 0.15);
+  background: var(--bg);
+  padding: 15%;
+  // justify-items: center;
+  // align-items: center;
+}
+
+.formWrapper {
+  max-width: 380px;
+  margin-top: 64px; // matches the “top whitespace” look
+}
+
+.welcome {
+  margin: 0 0 8px;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--welcome);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0 0 36px;
+  color: var(--subtitle);
+  font-size: 16px;
+}
