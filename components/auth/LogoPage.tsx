@@ -24,14 +24,15 @@ export const LogoPage = () => {
         />
       </div>
 
-      <div className={styles.illustrationWrap} aria-hidden="true">
+      <div className={styles.illustrationWrap}>
         <Image
           src="/pablo-sign-in 1.svg"
-          alt=""
+          alt="Lendsqr Signin Logo"
           width={600}
           height={338}
           className={styles.illustration}
           priority
+          aria-hidden="true"
         />
       </div>
     </section>
