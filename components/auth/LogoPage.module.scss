@@ -1,0 +1,79 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/**
+ * Figma group spec:
+ * width: 173.7647
+ * height: 36
+ * top: 106px
+ * left: 97px
+ */
+.brandGroup {
+  position: absolute;
+  top: 106px;
+  left: 97px;
+  width: 173.76473999023438px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px; // visual spacing between icon and wordmark (adjust if needed)
+}
+
+/**
+ * Individual logo spec:
+ * width: 24.75
+ * height: 25.0039
+ * top: 107.67px
+ * left: 97px
+ *
+ * Since the group itself starts at top=106/left=97,
+ * we just size the logo and align it vertically.
+ */
+.logo {
+  width: 24.75px;
+  height: 25.003942489624023px;
+}
+
+/**
+ * Word spec:
+ * width: 138.4397
+ * height: 36
+ * top: 106px
+ * left: 132.33px
+ *
+ * Within the group, it’s positioned after the logo.
+ */
+.wordmark {
+  width: 138.43972778320312px;
+  height: 36px;
+}
+
+/**
+ * Pablo image layout spec:
+ * width: 600
+ * height: 337.5694
+ * top: 281px
+ * left: 67px
+ */
+.illustrationWrap {
+  position: absolute;
+  top: 281px;
+  left: 67px;
+  width: 600px;
+  height: 337.56939697265625px;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.illustration {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
