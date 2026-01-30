@@ -1,0 +1,28 @@
+/**
+ * Individual logo spec:
+ * width: 24.75
+ * height: 25.0039
+ * top: 107.67px
+ * left: 97px
+ *
+ * Since the group itself starts at top=106/left=97,
+ * we just size the logo and align it vertically.
+ */
+.logo {
+  width: 24.75px;
+  height: 25.003942489624023px;
+}
+
+/**
+ * Word spec:
+ * width: 138.4397
+ * height: 36
+ * top: 106px
+ * left: 132.33px
+ *
+ * Within the group, it’s positioned after the logo.
+ */
+.wordmark {
+  width: 138.43972778320312px;
+  height: 36px;
+}

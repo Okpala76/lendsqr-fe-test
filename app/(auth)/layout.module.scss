@@ -5,6 +5,18 @@
   height: 100vh;
 }
 
+.brandGroup {
+  position: absolute;
+  top: 106px;
+  left: 97px;
+  width: 173.76473999023438px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px; // visual spacing between icon and wordmark (adjust if needed)
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .gridContainer {

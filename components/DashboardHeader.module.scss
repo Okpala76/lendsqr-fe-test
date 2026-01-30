@@ -1,0 +1,130 @@
+.container {
+  background-color: white;
+  width: 1440;
+  height: 100;
+}
+
+.brandGroup {
+  position: absolute;
+  top: 35px;
+  left: 30px;
+  width: 144.803955078125;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search {
+  position: absolute;
+  width: 400;
+  height: 40;
+  top: 30px;
+  left: 343px;
+  opacity: 0.2;
+  border-width: 1px;
+  border-radius: 8px;
+  border-color: #213f7d;
+  &:focus {
+    border-color: #39cdcc;
+    box-shadow: 0 0 0 3px rgba(57, 205, 204, 0.25); // a “ring”-like focus
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searchInput {
+  color: black;
+  padding: 5%;
+  &::placeholder {
+    color: rgba(84, 95, 125, 0.45);
+  }
+}
+
+.formButton {
+  height: 40px;
+  width: 48px;
+
+  background-color: #39cdcc;
+  color: white;
+
+  border-radius: 0 8px 8px 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.95);
+  }
+}
+
+.docsLink {
+  position: absolute;
+  width: 37;
+  height: 19;
+  top: 44px;
+  left: 1100px;
+  opacity: 1;
+  color: #213f7d;
+
+  font: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline solid;
+}
+
+.iconButton {
+  position: absolute;
+  width: 26;
+  height: 26;
+  top: 37px;
+  left: 1184px;
+  opacity: 1;
+  display: block;
+
+  /* child */
+  .bell {
+    position: absolute;
+
+    top: 1.73px;
+    left: 3.16px;
+
+    width: 19.67px;
+    height: 22.74px;
+
+    stroke: #213f7d;
+    stroke-width: 0.4px;
+  }
+}
+
+.avatar {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 26px;
+  left: 1240px;
+  opacity: 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.userButton {
+  position: absolute;
+  left: 1298px;
+  top: 44px;
+
+  font-family: "Work Sans";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+
+  display: flex;
+  align-items: center;
+  color: #213f7d;
+}
