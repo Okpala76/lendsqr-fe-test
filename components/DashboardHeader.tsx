@@ -72,12 +72,7 @@ export function DashboardHeader() {
       >
         <span>Adedeji</span>
 
-        <Image
-          src="/dropdown.png"
-          alt="Dropdown icon"
-          width={100}
-          height={100}
-        />
+        <Image src="/dropdown.png" alt="Dropdown icon" width={20} height={20} />
       </button>
     </header>
   );
