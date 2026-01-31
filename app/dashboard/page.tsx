@@ -1,4 +1,8 @@
+"use client";
+
 import { MetricCard } from "@/components/metric-card/MetricCard";
+import { UsersTable } from "@/components/table/UsersTable";
+import { useMockData } from "@/hooks/useMockdata";
 import styles from "./page.module.scss";
 
 export default function UserDashboardPage() {
@@ -28,6 +32,9 @@ export default function UserDashboardPage() {
       iconAlt: "Revenue",
     },
   ];
+
+  const { data, isLoading, error } = useMockData();
+
   return (
     <div>
       <div className={styles.header}>
@@ -44,6 +51,16 @@ export default function UserDashboardPage() {
             iconAlt={metric.iconAlt}
           />
         ))}
+      </section>
+
+      <section className={styles.table}>
+        {isLoading ? (
+          <p>Loading users…</p>
+        ) : error ? (
+          <p>Failed to load users.</p>
+        ) : (
+          <UsersTable users={Array.isArray(data) ? data : []} />
+        )}
       </section>
     </div>
   );

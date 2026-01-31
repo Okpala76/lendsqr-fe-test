@@ -1,0 +1,266 @@
+// Container & Layout
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.headerContent {
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: #4b5563;
+    margin: 0.25rem 0 0 0;
+  }
+}
+
+.relativeContainer {
+  position: relative;
+}
+
+.filterPopup {
+  position: fixed;
+  z-index: 9999;
+}
+
+// Table Styles
+.tableWrapper {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  background-color: #fff;
+
+  tr {
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  th {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    vertical-align: middle;
+  }
+}
+
+.tableBody {
+  tr {
+    border-bottom: 1px solid #f3f4f6;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  td {
+    padding: 1.25rem 1.5rem;
+    vertical-align: middle;
+    color: #374151;
+  }
+}
+
+.emptyRow {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+// Table Header with Filter
+.headerWithFilter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.headerLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.filterButton {
+  border-radius: 0.375rem;
+  padding: 0.25rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: #f3f4f6;
+  }
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    color: #9ca3af;
+  }
+}
+
+// Status Pill
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.statusInactive {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.statusPending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.statusBlacklisted {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.statusActive {
+  background-color: #dbeafe;
+  color: #0369a1;
+}
+
+// Filter Card
+.filterCard {
+  width: 280px;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  background-color: #fff;
+  padding: 1.25rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.filterSpace {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.filterInput,
+.filterSelect {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  color: #374151;
+  outline: none;
+  transition: all 0.2s;
+
+  &:focus {
+    ring-width: 2px;
+    ring-color: #e5e7eb;
+    box-shadow: inset 0 0 0 2px #e5e7eb;
+  }
+}
+
+.filterButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+.filterButtonReset {
+  width: 110px;
+  border-radius: 0.5rem;
+  border: 1px solid #a0aec0;
+  background-color: #fff;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #f9fafb;
+  }
+}
+
+.filterButtonApply {
+  width: 110px;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #2dd4bf;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+// Action Button
+.actionButton {
+  height: 2.25rem;
+  width: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: #6b7280;
+  font-size: 1.25rem;
+  line-height: 1;
+
+  &:hover {
+    background-color: #f3f4f6;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
